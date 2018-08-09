@@ -3,13 +3,5 @@
 # Git Settings
 /.settings/
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
 # Mac
 .DS_Store
