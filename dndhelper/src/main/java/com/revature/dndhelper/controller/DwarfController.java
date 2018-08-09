@@ -1,5 +1,5 @@
 package com.revature.dndhelper.controller;
 
-public class DwardAttributesServlet {
+public class DwarfController {
 
 }
