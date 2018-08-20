@@ -1,0 +1,7 @@
+/target/
+
+# Git Settings
+/.settings/
+
+# Mac
+.DS_Store
