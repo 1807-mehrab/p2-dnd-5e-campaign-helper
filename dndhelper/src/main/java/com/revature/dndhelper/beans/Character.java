@@ -10,11 +10,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="character_main")
+@Table
 public class Character {
 	@Id
 	@GeneratedValue
-	@Column(name="char_id")
+	@Column(name="CHAR_ID")
 	private int charId;
 	
 	@Column(name="user_id")

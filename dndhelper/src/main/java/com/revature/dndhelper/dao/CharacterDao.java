@@ -17,7 +17,7 @@ public class CharacterDao {
 	
 	public List<Character> getAllCharacters() {
 		Session s = sessionFactory.getCurrentSession();
-		return s.createQuery("from characters_main").list();
+		return s.createQuery("from Characters_Main").list();
 	}
 	
 	public List<Character> getCharactersByuserId(String userId) {
