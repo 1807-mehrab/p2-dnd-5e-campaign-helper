@@ -1,6 +1,7 @@
 package com.revature.beans;
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -9,7 +10,9 @@ import javax.persistence.Table;
 @Table
 public class UserAccount implements Serializable{
 	@Id
+	@Column(name = "email")
 	private String email;
+	@Column(name = "pass")
 	private String password;
 	public UserAccount(String email,String password) {
 		this.email = email;

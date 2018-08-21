@@ -9,25 +9,61 @@ import javax.persistence.*;
 public class CharacterSkills implements Serializable{
 	@Id
 	@GeneratedValue
+	@Column(name = "char_id")
 	private int charId;
 	
+	@Column(name = "char_acrobatics")
 	private boolean acrobatics;
+	
+	@Column(name = "char_animal_handling")
 	private boolean animalHandling;
+	
+	@Column(name = "char_arcana")
 	private boolean arcana;
+	
+	@Column(name = "char_athletics")
 	private boolean athletics;
+	
+	@Column(name = "char_deception")
 	private boolean deception;
+	
+	@Column(name = "char_history")
 	private boolean history;
+	
+	@Column(name = "char_insight")
 	private boolean insight;
+	
+	@Column(name = "char_intimidation")
 	private boolean intimidation;
+	
+	@Column(name = "char_investigation")
 	private boolean investigation;
+	
+	@Column(name = "char_medicine")
 	private boolean medicine;
+	
+	@Column(name = "char_nature")
 	private boolean nature;
+	
+	@Column(name = "char_perception")
 	private boolean perception;
+	
+	@Column(name = "char_performance")
 	private boolean performance;
+	
+	@Column(name = "char_persuasion")
 	private boolean persuasion;
+	
+	@Column(name = "char_religion")
 	private boolean religion;
+	
+	@Column(name = "char_soh")
 	private boolean soh;
+	
+	@Column(name = "char_stealth")
 	private boolean stealth;
+	
+	@Column(name = "char_survival")
 	private boolean survival;
 	
 	public int getId() {

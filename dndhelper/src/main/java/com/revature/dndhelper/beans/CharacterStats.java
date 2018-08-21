@@ -2,6 +2,7 @@ package com.revature.beans;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,15 +13,31 @@ import javax.persistence.Table;
 public class CharacterStats implements Serializable{
 	@Id
 	@GeneratedValue
+	@Column(name = "char_id")
 	private int charId;
 	
+	@Column(name = "strength")
 	private int strength;
+	
+	@Column(name = "dexterity")
 	private int dexterity;
+	
+	@Column(name = "intelligence")
 	private int intelligence;
+	
+	@Column(name = "charisma")
 	private int charisma;
+	
+	@Column(name = "constitution")
 	private int constitution;
+	
+	@Column(name = "wisdom")
 	private int wisdom;
+	
+	@Column(name = "hit_points")
 	private int hitPoints;
+	
+	@Column(name = "speed")
 	private int speed;
 	
 	public CharacterStats(int str,int dex,int con,int in, int wis, int chr,int hP,int spd) {
