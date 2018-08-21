@@ -1,6 +1,7 @@
 package com.revature.dndhelper.beans;
 
 import java.io.Serializable;
+import java.util.*;
 
 import javax.persistence.*;
 
@@ -65,6 +66,29 @@ public class CharacterSkills implements Serializable{
 	@Column(name = "char_survival")
 	private boolean survival;
 	
+	//this method builds a hash map and returns it
+	public Map<String, Boolean> getHashMap() {
+		Map<String, Boolean> skillMap = new HashMap<String,Boolean>();
+		skillMap.put("Acrobatics",acrobatics);
+		skillMap.put("AnimalHandling",animalHandling );
+		skillMap.put("Arcana", arcana);
+		skillMap.put("Athletics", athletics);
+		skillMap.put("Deception", deception);
+		skillMap.put("History", history);
+		skillMap.put("Insight", insight);
+		skillMap.put("Intimidation", intimidation);
+		skillMap.put("Investigation", investigation);
+		skillMap.put("Medicine", medicine);
+		skillMap.put("Nature", nature);
+		skillMap.put("Perception", perception);
+		skillMap.put("Performance", performance);
+		skillMap.put("Persuation", persuasion);
+		skillMap.put("Religion", religion);
+		skillMap.put("Soh", soh);
+		skillMap.put("Stealth", stealth);
+		skillMap.put("Survival", survival);
+		return skillMap;
+	}
 	public int getId() {
 		return charId;
 	}
