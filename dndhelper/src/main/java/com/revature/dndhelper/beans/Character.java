@@ -1,5 +1,6 @@
 package com.revature.dndhelper.beans;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,17 +14,22 @@ import org.springframework.stereotype.Component;
 public class Character {
 	@Id
 	@GeneratedValue
+	@Column(name="char_id")
 	private int charId;
 	
-	
+	@Column(name="user_id")
 	private String userEmail;
 	
+	@Column(name="char_name")
 	private String charName;
 	
+	@Column(name="char_class")
 	private String charClass;
 	
+	@Column(name="char_race")
 	private String charRace;
 	
+	@Column(name="char_background")
 	private String charBackground;
 	
 	public int getCharId() {
