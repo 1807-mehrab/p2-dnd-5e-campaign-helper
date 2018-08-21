@@ -1,4 +1,4 @@
-package com.revature.dao;
+package com.revature.dndhelper.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.beans.UserAccount;
+import com.revature.dndhelper.beans.UserAccount;
 
 @Transactional
 public class UserDao{

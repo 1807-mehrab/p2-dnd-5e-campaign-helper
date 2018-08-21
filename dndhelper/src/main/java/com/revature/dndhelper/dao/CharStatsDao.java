@@ -1,4 +1,4 @@
-package com.revature.dao;
+package com.revature.dndhelper.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.beans.CharacterStats;
+import com.revature.dndhelper.beans.CharacterStats;
 
 @Transactional
 public class CharStatsDao{

@@ -1,4 +1,4 @@
-package com.revature.beans;
+package com.revature.dndhelper.beans;
 
 import java.io.Serializable;
 
