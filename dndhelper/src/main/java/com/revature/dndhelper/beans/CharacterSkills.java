@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Table
 public class CharacterSkills implements Serializable{
 	@Id
-	@GeneratedValue
 	@Column(name = "char_id")
 	private int charId;
 	
@@ -122,6 +121,9 @@ public class CharacterSkills implements Serializable{
 	}
 	public boolean getSurvival() {
 		return survival;
+	}
+	public void setId(int id) {
+		charId = id;
 	}
 	public void setAcrobatics(boolean hasAcro) {
 		acrobatics = hasAcro;

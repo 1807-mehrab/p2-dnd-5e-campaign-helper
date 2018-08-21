@@ -12,7 +12,6 @@ import javax.persistence.Table;
 @Table
 public class CharacterStats implements Serializable{
 	@Id
-	@GeneratedValue
 	@Column(name = "char_id")
 	private int charId;
 	
@@ -49,6 +48,9 @@ public class CharacterStats implements Serializable{
 		charisma = chr;
 		hitPoints = hP;
 		speed = spd;
+	}
+	public void setId(int id) {
+		charId = id;
 	}
 	public void setStr(int str) {
 		strength = str;
