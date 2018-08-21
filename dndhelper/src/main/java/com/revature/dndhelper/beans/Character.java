@@ -10,14 +10,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table
+@Table(name="Characters_Main")
 public class Character {
+	
 	@Id
 	@GeneratedValue
-	@Column(name="CHAR_ID")
+	@Column(name="char_id")
 	private int charId;
 	
-	@Column(name="user_id")
+	@Column(name="email")
 	private String userEmail;
 	
 	@Column(name="char_name")
@@ -31,6 +32,9 @@ public class Character {
 	
 	@Column(name="char_background")
 	private String charBackground;
+	
+	@Column(name="char_alignment")
+	private String charAlignment;
 	
 	public int getCharId() {
 		return charId;
@@ -69,6 +73,11 @@ public class Character {
 		this.charBackground = charBackground;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Character [charId=" + charId + ", userEmail=" + userEmail + ", charName=" + charName + ", charClass="
+				+ charClass + ", charRace=" + charRace + ", charBackground=" + charBackground + ", charAlignment="
+				+ charAlignment + "]";
+	}
 
 }

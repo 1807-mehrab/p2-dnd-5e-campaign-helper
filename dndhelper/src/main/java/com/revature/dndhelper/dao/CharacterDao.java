@@ -1,5 +1,6 @@
 package com.revature.dndhelper.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -17,12 +18,12 @@ public class CharacterDao {
 	
 	public List<Character> getAllCharacters() {
 		Session s = sessionFactory.getCurrentSession();
-		return s.createQuery("from Characters_Main").list();
+		return s.createQuery("from Character").list();
 	}
 	
 	public List<Character> getCharactersByuserId(String userId) {
 		Session s = sessionFactory.getCurrentSession();
-		List<Character> result = s.createQuery("from characters_main where user_id= :userId").
+		List<Character> result = s.createQuery("from Character where user_id= :userId").
 				setString("userId", userId).list();
 	
 		return result;

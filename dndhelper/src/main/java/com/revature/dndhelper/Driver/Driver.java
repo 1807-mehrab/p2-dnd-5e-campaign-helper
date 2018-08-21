@@ -16,7 +16,7 @@ public class Driver {
 		CharacterService characterService = context.getBean("characterService", CharacterService.class);
 		
 		List<Character> list = characterService.getAllCharacters();
-		
+		System.out.println(list);
 		context.close();
 	}
 
