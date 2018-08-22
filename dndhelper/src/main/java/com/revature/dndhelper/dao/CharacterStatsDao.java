@@ -20,7 +20,7 @@ public class CharacterStatsDao{
 	public List<CharacterStats> getCharacterStatsByUserId(int charId){
 		Session session = sessionFactory.getCurrentSession();
 		List<CharacterStats> accounts = new ArrayList<CharacterStats>();
-		accounts= session.createQuery("from Characters_Stats where char_id = :nameVar")
+		accounts= session.createQuery("from CharacterStats where char_id = :nameVar")
 				.setInteger("nameVar", charId).list();
 		return accounts;
 	}

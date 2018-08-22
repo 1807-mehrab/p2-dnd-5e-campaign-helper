@@ -30,14 +30,14 @@ public class Driver {
 		String charAlignment = "league of dab";
 		
 		
-		characterService.saveCharacter(userEmail, charName, charClass, charRace, charBackground, charAlignment);
-		List<DNDCharacter> list = characterService.getAllCharacters();
-		System.out.println(list);
+		//characterService.saveCharacter(userEmail, charName, charClass, charRace, charBackground, charAlignment);
+		//List<DNDCharacter> list = characterService.getAllCharacters();
+		//System.out.println(list);
 		
 		
 		
-		userService.saveUser("blazer", "dank");
-		
+		//userService.saveUser("blazer", "dank");
+		System.out.println(userService.userExists("blazer"));
 		
 		context.close();
 	}

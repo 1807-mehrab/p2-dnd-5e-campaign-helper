@@ -93,6 +93,7 @@ public class CharacterSkills{
 		skillMap.put("Survival", survival);
 		return skillMap;
 	}
+	
 	public int getId() {
 		return charId;
 	}

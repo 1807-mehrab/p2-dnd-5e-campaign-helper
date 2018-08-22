@@ -37,7 +37,7 @@ public class CharacterDao {
 	public int saveCharacter(DNDCharacter c) {
 		Session s = sessionFactory.getCurrentSession();
 		try {
-		return (int) s.save(c);
+			return (int) s.save(c);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

@@ -23,6 +23,11 @@ public class UserService {
 	}
 	
 	@Transactional
+	public Boolean userExists(String email) {
+		return dao.userExists(email);
+	}
+	
+	@Transactional
 	public void saveUser(String email, String password) {
 		
 		User user = new User();

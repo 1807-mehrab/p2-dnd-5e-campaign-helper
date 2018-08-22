@@ -21,12 +21,23 @@ public class UserDao{
 	public User getUserByEmail(String email) {
 		Session session = sessionFactory.getCurrentSession();
 		List<User> account = new ArrayList<User>();
-		account = session.createQuery("from User_Accounts where email = :nameVar")
+		account = session.createQuery("from User where email = :nameVar")
 				.setString("nameVar", email).list();
 		if(account.isEmpty()) {
 			return null;
 		}
 		return account.get(0);
+	}
+	
+	public Boolean userExists(String email) {
+		Session session = sessionFactory.getCurrentSession();
+		List<User> account = new ArrayList<User>();
+		account = session.createQuery("from User where email = :nameVar")
+				.setString("nameVar", email).list();
+		if(account.isEmpty()) {
+			return false;
+		}
+		return true;
 	}
 	
 	public int saveUser(User user) {
