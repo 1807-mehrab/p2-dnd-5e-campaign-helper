@@ -20,9 +20,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.revature.dndhelper.dao.CharacterDao;
 import com.revature.dndhelper.dao.CharacterSkillsDao;
 import com.revature.dndhelper.dao.CharacterStatsDao;
+import com.revature.dndhelper.dao.UserDao;
 import com.revature.dndhelper.service.CharacterService;
 import com.revature.dndhelper.service.CharacterSkillsService;
 import com.revature.dndhelper.service.CharacterStatsService;
+import com.revature.dndhelper.service.UserService;
 
 
 
@@ -99,6 +101,14 @@ public class HibernateConfiguration {
 	}
 	
 	@Bean
+	public UserDao userDao(SessionFactory sessionFactory) {
+		UserDao dao = new UserDao();
+		dao.setSessionFactory(sessionFactory);
+		
+		return dao;
+	}
+	
+	@Bean
 	public CharacterService characterService(CharacterDao characterDao) {
 		CharacterService cs = new CharacterService();
 		cs.setDao(characterDao);
@@ -120,6 +130,14 @@ public class HibernateConfiguration {
 		cs.setDao(characterStatsDao);
 		
 		return cs;
+	}
+	
+	@Bean 
+	public UserService userService(UserDao userDao) {
+		UserService us = new UserService();
+		us.setDao(userDao);
+		
+		return us;
 	}
 
 }

@@ -11,6 +11,7 @@ import com.revature.dndhelper.dao.CharacterDao;
 import com.revature.dndhelper.service.CharacterService;
 import com.revature.dndhelper.service.CharacterSkillsService;
 import com.revature.dndhelper.service.CharacterStatsService;
+import com.revature.dndhelper.service.UserService;
 
 public class Driver {
 
@@ -19,6 +20,7 @@ public class Driver {
 		CharacterService characterService = context.getBean("characterService", CharacterService.class);
 		CharacterSkillsService characterSkillsService = context.getBean("characterSkillsService", CharacterSkillsService.class);
 		CharacterStatsService characterStatsService = context.getBean("characterStatsService", CharacterStatsService.class);
+		UserService userService = context.getBean("userService", UserService.class);
 		
 		String userEmail = "IAmGMMan@420blazeit.com";
 		String charName = "blaze";
@@ -27,9 +29,15 @@ public class Driver {
 		String charBackground = "botanist";
 		String charAlignment = "league of dab";
 		
-		//List<DNDCharacter> list = characterService.getAllCharacters();
-		//System.out.println(list);
+		
 		characterService.saveCharacter(userEmail, charName, charClass, charRace, charBackground, charAlignment);
+		List<DNDCharacter> list = characterService.getAllCharacters();
+		System.out.println(list);
+		
+		
+		
+		userService.saveUser("blazer", "dank");
+		
 		
 		context.close();
 	}
