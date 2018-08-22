@@ -24,11 +24,26 @@ public class CharacterStatsDao{
 				.setInteger("nameVar", charId).list();
 		return accounts;
 	}
-	public int saveCharacterStats(CharacterStats cStat) {
+	
+	public int saveCharacterStats(CharacterStats cStats) {
 		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-		int result = Integer.parseInt((String)s.save(cStat));
-		tx.commit();
-		return result;
+		try {
+			return (int) s.save(cStats);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
+	public void updateCharacterStats(CharacterStats cStats) {
+		Session s = sessionFactory.getCurrentSession();
+		try {
+			s.update(cStats);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			
+		}
 	}
 }

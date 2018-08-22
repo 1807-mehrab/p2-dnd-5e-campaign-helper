@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.dndhelper.beans.CharacterSkills;
-import com.revature.dndhelper.beans.DNDCharacter;
-import com.revature.dndhelper.dao.CharacterDao;
 import com.revature.dndhelper.dao.CharacterSkillsDao;
 
 @Service
@@ -24,5 +22,15 @@ public class CharacterSkillsService {
 	@Transactional
 	public CharacterSkills getCharacterSkillsByCharId(int charId) {
 		return dao.getCharacterSkillsByCharId(charId);
+	}
+	
+	@Transactional
+	void saveCharacterSkills(CharacterSkills cSkill) {
+		dao.saveCharacterStats(cSkill);
+	}
+	
+	@Transactional
+	void updateCharacterSkills(CharacterSkills cSkill) {
+		dao.updateCharacterStats(cSkill);
 	}
 }

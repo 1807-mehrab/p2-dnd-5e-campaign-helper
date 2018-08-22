@@ -32,9 +32,22 @@ public class CharacterSkillsDao{
 	
 	public int saveCharacterStats(CharacterSkills cSkill) {
 		Session s = sessionFactory.getCurrentSession();
-		Transaction tx = s.beginTransaction();
-		int result = Integer.parseInt((String)s.save(cSkill));
-		tx.commit();
-		return result;
+		try {
+			return (int) s.save(cSkill);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+	
+	public void updateCharacterStats(CharacterSkills cSkill) {
+		Session s = sessionFactory.getCurrentSession();
+		try {
+			s.update(cSkill);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
