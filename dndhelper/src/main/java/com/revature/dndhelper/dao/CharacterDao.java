@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
 import com.revature.dndhelper.beans.CharacterSkills;
+import com.revature.dndhelper.beans.DNDCharacter;
 
 @Repository
 public class CharacterDao {
@@ -18,33 +19,39 @@ public class CharacterDao {
 		this.sessionFactory = sessionFactory;
 	}
 	
-	public List<Character> getAllCharacters() {
+	public List<DNDCharacter> getAllCharacters() {
 		Session s = sessionFactory.getCurrentSession();
 		return s.createQuery("from Character").list();
 	}
 	
-	public List<Character> getCharactersByUserId(String userId) {
+	public List<DNDCharacter> getCharactersByUserEmail(String email) {
 		Session s = sessionFactory.getCurrentSession();
-		List<Character> result = s.createQuery("from Character where user_id= :userId").
-				setString("userId", userId).list();
-	
+		List<DNDCharacter> result = s.createQuery("from DNDCharacter where email= :email").
+				setString("email", email).list();
 		return result;
 	}
 	
-	public HashMap<String, Boolean> getCharacterSkillsByCharacterId(int charId) {
+	public DNDCharacter getCharacterByCharId(int charId) {
 		Session s = sessionFactory.getCurrentSession();
-		List<CharacterSkills> result = s.createQuery("from CharacterSkills where char_id= :charId").
+		List<DNDCharacter> result = s.createQuery("from DNDCharacter where char_id= :charId").
 				setInteger("charId", charId).list();
-		
 		if(result.isEmpty()) {
-			return null; // charId is not in table 
+			return null;
 		}
-		CharacterSkills skills = result.get(0); // there will only be one skill row retrieved
-		// finish this by returning characterSkills as some sort of ordered iterable Collection
 		
+		return result.get(0);
 	}
 	
-	public int saveCharacter(Character c) {
+	public int cloneCharacter(DNDCharacter c, String userEmail) {
+		Session s = sessionFactory.getCurrentSession();
+		c.setUserEmail(userEmail);
+		Transaction tx = s.beginTransaction();
+		int result = (int) s.save(c);
+		tx.commit();
+		return result;
+	}
+	
+	public int saveCharacter(DNDCharacter c) {
 		Session s = sessionFactory.getCurrentSession();
 		Transaction tx = s.beginTransaction();
 		int result = (int) s.save(c);

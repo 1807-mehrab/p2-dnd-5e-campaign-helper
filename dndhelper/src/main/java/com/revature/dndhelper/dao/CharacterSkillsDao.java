@@ -11,19 +11,19 @@ import org.springframework.transaction.annotation.Transactional;
 import com.revature.dndhelper.beans.CharacterSkills;
 
 @Transactional
-public class CharSkillsDao{
+public class CharacterSkillsDao{
 	private SessionFactory sessionFactory;
 	public void setSF(SessionFactory sF) {
 		sessionFactory = sF;
 	}
-	public List<CharacterSkills> getUserCharStats(int charId){
+	public List<CharacterSkills> getCharacterStatsByCharId(int charId){
 		Session session = sessionFactory.getCurrentSession();
 		List<CharacterSkills> accounts = new ArrayList<CharacterSkills>();
 		accounts= session.createQuery("from Characters_Skills where char_id = :nameVar")
 				.setInteger("nameVar", charId).list();
 		return accounts;
 	}
-	public int saveCharStats(CharacterSkills cSkill) {
+	public int saveCharacterStats(CharacterSkills cSkill) {
 		Session s = sessionFactory.getCurrentSession();
 		Transaction tx = s.beginTransaction();
 		int result = Integer.parseInt((String)s.save(cSkill));

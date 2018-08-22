@@ -1,5 +1,7 @@
 package com.revature.dndhelper.beans;
 
+import java.util.HashMap;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 @Table(name="Characters_Main")
-public class Character {
+public class DNDCharacter {
 	
 	@Id
 	@GeneratedValue
@@ -35,6 +37,9 @@ public class Character {
 	
 	@Column(name="char_alignment")
 	private String charAlignment;
+	
+	private HashMap<String, Boolean> characterSkills;
+	
 	
 	public int getCharId() {
 		return charId;
