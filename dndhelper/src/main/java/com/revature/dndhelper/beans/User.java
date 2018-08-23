@@ -5,12 +5,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+import com.fasterxml.jackson.annotation.JsonRootName;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
 @Table(name="User_Accounts")
+@JsonRootName(value = "user")
 public class User implements Serializable{
 	
 	@Id

@@ -11,6 +11,9 @@ Router.map(function() {
   this.route('createaccount');
   this.route('login');
   this.route('createchar');
+  this.route('user');
+  this.route('profile');
+  this.route('post');
 });
 
 export default Router;
