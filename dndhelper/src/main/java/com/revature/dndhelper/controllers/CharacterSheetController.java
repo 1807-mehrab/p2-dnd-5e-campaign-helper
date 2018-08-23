@@ -89,6 +89,11 @@ public class CharacterSheetController{
 			charStats.setChr(2 + charStats.getChr());
 		}
 		
+		//Set Speed based on race 
+		if(character.getCharClass().equals("Hill Dwarf") || character.getCharClass().equals("Mountain Dwarf") || character.getCharClass().equals("Lightfoot Halfling") || character.getCharClass().equals("Stout Halfling") || character.getCharClass().equals("Forest Gnome") || character.getCharClass().equals("Rock Gnome"))charStats.setSpeed(25);
+		else if(character.getCharClass().equals("Wood Elf"))charStats.setSpeed(35);
+		else charStats.setSpeed(30);
+		
 		//Modify HP based on final constitution value
 		charStats.setHP(charStats.getHP() + (charStats.getCon()-10)/2);
 	
@@ -169,6 +174,11 @@ public class CharacterSheetController{
 				charStats.setIntel(1 + charStats.getIntel());
 				charStats.setChr(2 + charStats.getChr());
 			}
+			
+			//Set Speed based on race 
+			if(character.getCharClass().equals("Hill Dwarf") || character.getCharClass().equals("Mountain Dwarf") || character.getCharClass().equals("Lightfoot Halfling") || character.getCharClass().equals("Stout Halfling") || character.getCharClass().equals("Forest Gnome") || character.getCharClass().equals("Rock Gnome"))charStats.setSpeed(25);
+			else if(character.getCharClass().equals("Wood Elf"))charStats.setSpeed(35);
+			else charStats.setSpeed(30);
 			
 			//Modify HP based on final constitution value
 			charStats.setHP(charStats.getHP() + (charStats.getCon()-10)/2);
