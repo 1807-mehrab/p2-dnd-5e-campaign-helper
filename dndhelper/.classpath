@@ -24,5 +24,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/timot/.m2/repository/com/oracle/ojdbc8/12.0.1/ojdbc8-12.0.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
