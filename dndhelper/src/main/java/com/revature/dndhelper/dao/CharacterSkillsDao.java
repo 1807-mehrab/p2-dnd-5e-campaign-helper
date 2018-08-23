@@ -30,7 +30,7 @@ public class CharacterSkillsDao{
 		return skills.get(0);
 	}
 	
-	public int saveCharacterStats(CharacterSkills cSkill) {
+	public int saveCharacterSkills(CharacterSkills cSkill) {
 		Session s = sessionFactory.getCurrentSession();
 		try {
 			return (int) s.save(cSkill);
@@ -41,7 +41,7 @@ public class CharacterSkillsDao{
 		}
 	}
 	
-	public void updateCharacterStats(CharacterSkills cSkill) {
+	public void updateCharacterSkills(CharacterSkills cSkill) {
 		Session s = sessionFactory.getCurrentSession();
 		try {
 			s.update(cSkill);
