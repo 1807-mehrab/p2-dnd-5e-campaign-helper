@@ -6,14 +6,15 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.dndhelper.beans.CharacterStats;
 
-@Transactional
+@Repository
 public class CharacterStatsDao{
 	private SessionFactory sessionFactory;
-	public void setSF(SessionFactory sF) {
+	public void setSessionFactory(SessionFactory sF) {
 		sessionFactory = sF;
 	}
 	public List<CharacterStats> getCharacterStatsByUserId(int charId){

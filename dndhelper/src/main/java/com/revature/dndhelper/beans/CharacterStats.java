@@ -8,10 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
-@Table
-public class CharacterStats implements Serializable{
+@Table(name="Characters_Stats")
+public class CharacterStats{
+	
 	@Id
+	@GeneratedValue
 	@Column(name = "char_id")
 	private int charId;
 	
@@ -39,16 +44,6 @@ public class CharacterStats implements Serializable{
 	@Column(name = "speed")
 	private int speed;
 	
-	public CharacterStats(int str,int dex,int con,int in, int wis, int chr,int hP,int spd) {
-		strength = str;
-		dexterity = dex;
-		constitution = con;
-		intelligence = in;
-		wisdom = wis;
-		charisma = chr;
-		hitPoints = hP;
-		speed = spd;
-	}
 	public void setId(int id) {
 		charId = id;
 	}
@@ -102,5 +97,12 @@ public class CharacterStats implements Serializable{
 	}
 	public int getSpeed() {
 		return speed;
+	}
+	
+	@Override
+	public String toString() {
+		return "CharacterStats [charId=" + charId + ", strength=" + strength + ", dexterity=" + dexterity
+				+ ", intelligence=" + intelligence + ", charisma=" + charisma + ", constitution=" + constitution
+				+ ", wisdom=" + wisdom + ", hitPoints=" + hitPoints + ", speed=" + speed + "]";
 	}
 }

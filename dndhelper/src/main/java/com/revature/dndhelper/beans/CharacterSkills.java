@@ -5,70 +5,74 @@ import java.util.*;
 
 import javax.persistence.*;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity
-@Table
-public class CharacterSkills implements Serializable{
+@Table(name="Characters_Skills")
+public class CharacterSkills{
 	@Id
+	@GeneratedValue
 	@Column(name = "char_id")
 	private int charId;
 	
 	@Column(name = "char_acrobatics")
-	private boolean acrobatics;
+	private String acrobatics;
 	
 	@Column(name = "char_animal_handling")
-	private boolean animalHandling;
+	private String animalHandling;
 	
 	@Column(name = "char_arcana")
-	private boolean arcana;
+	private String arcana;
 	
 	@Column(name = "char_athletics")
-	private boolean athletics;
+	private String athletics;
 	
 	@Column(name = "char_deception")
-	private boolean deception;
+	private String deception;
 	
 	@Column(name = "char_history")
-	private boolean history;
+	private String history;
 	
 	@Column(name = "char_insight")
-	private boolean insight;
+	private String insight;
 	
 	@Column(name = "char_intimidation")
-	private boolean intimidation;
+	private String intimidation;
 	
 	@Column(name = "char_investigation")
-	private boolean investigation;
+	private String investigation;
 	
 	@Column(name = "char_medicine")
-	private boolean medicine;
+	private String medicine;
 	
 	@Column(name = "char_nature")
-	private boolean nature;
+	private String nature;
 	
 	@Column(name = "char_perception")
-	private boolean perception;
+	private String perception;
 	
 	@Column(name = "char_performance")
-	private boolean performance;
+	private String performance;
 	
 	@Column(name = "char_persuasion")
-	private boolean persuasion;
+	private String persuasion;
 	
 	@Column(name = "char_religion")
-	private boolean religion;
+	private String religion;
 	
 	@Column(name = "char_soh")
-	private boolean soh;
+	private String soh;
 	
 	@Column(name = "char_stealth")
-	private boolean stealth;
+	private String stealth;
 	
 	@Column(name = "char_survival")
-	private boolean survival;
+	private String survival;
 	
 	//this method builds a hash map and returns it
-	public Map<String, Boolean> getHashMap() {
-		Map<String, Boolean> skillMap = new HashMap<String,Boolean>();
+	public Map<String, String> getHashMap() {
+		Map<String, String> skillMap = new HashMap<String,String>();
 		skillMap.put("Acrobatics",acrobatics);
 		skillMap.put("AnimalHandling",animalHandling );
 		skillMap.put("Arcana", arcana);
@@ -92,115 +96,125 @@ public class CharacterSkills implements Serializable{
 	public int getId() {
 		return charId;
 	}
-	public boolean getAcrobatics() {
+	public String getAcrobatics() {
 		return acrobatics;
 	}
-	public boolean getAnimalHandling() {
+	public String getAnimalHandling() {
 		return animalHandling;
 	}
-	public boolean getArcana() {
+	public String getArcana() {
 		return arcana;
 	}
-	public boolean getAthletics() {
+	public String getAthletics() {
 		return athletics;
 	}
-	public boolean getDeception() {
+	public String getDeception() {
 		return deception;
 	}
-	public boolean getHistory() {
+	public String getHistory() {
 		return history;
 	}
-	public boolean getInsight() {
+	public String getInsight() {
 		return insight;
 	}
-	public boolean getIntimidation() {
+	public String getIntimidation() {
 		return intimidation;
 	}
-	public boolean getInvestigation() {
+	public String getInvestigation() {
 		return investigation;
 	}
-	public boolean getMedicine() {
+	public String getMedicine() {
 		return medicine;
 	}
-	public boolean getNature() {
+	public String getNature() {
 		return nature;
 	}
-	public boolean getPerception() {
+	public String getPerception() {
 		return perception;
 	}
-	public boolean getPerformance() {
+	public String getPerformance() {
 		return performance;
 	}
-	public boolean getPersuasion() {
+	public String getPersuasion() {
 		return persuasion;
 	}
-	public boolean getReligion() {
+	public String getReligion() {
 		return religion;
 	}
-	public boolean getSoh() {
+	public String getSoh() {
 		return soh;
 	}
-	public boolean getStealth() {
+	public String getStealth() {
 		return stealth;
 	}
-	public boolean getSurvival() {
+	public String getSurvival() {
 		return survival;
 	}
 	public void setId(int id) {
 		charId = id;
 	}
-	public void setAcrobatics(boolean hasAcro) {
+	public void setAcrobatics(String hasAcro) {
 		acrobatics = hasAcro;
 	}
-	public void setAnimalHandling(boolean hasAH) {
+	public void setAnimalHandling(String hasAH) {
 		animalHandling = hasAH;
 	}
-	public void setArcana(boolean hasArcana) {
+	public void setArcana(String hasArcana) {
 		arcana = hasArcana;
 	}
-	public void setAthletics(boolean hasAth) {
+	public void setAthletics(String hasAth) {
 		athletics = hasAth;
 	}
-	public void setDeception(boolean hasDeception) {
+	public void setDeception(String hasDeception) {
 		deception = hasDeception;
 	}
-	public void setHistory(boolean hasHist) {
+	public void setHistory(String hasHist) {
 		history = hasHist;
 	}
-	public void setInsight(boolean hasInsight) {
+	public void setInsight(String hasInsight) {
 		insight = hasInsight;
 	}
-	public void setIntimidation(boolean hasIntim) {
+	public void setIntimidation(String hasIntim) {
 		intimidation = hasIntim;
 	}
-	public void setInvestigation(boolean hasInv) {
+	public void setInvestigation(String hasInv) {
 		investigation = hasInv;
 	}
-	public void setMedicine(boolean hasMed) {
+	public void setMedicine(String hasMed) {
 		medicine = hasMed;
 	}
-	public void setNature(boolean hasNat) {
+	public void setNature(String hasNat) {
 		nature = hasNat;
 	}
-	public void setPerception(boolean hasPer) {
+	public void setPerception(String hasPer) {
 		perception = hasPer;
 	}
-	public void setPerformance(boolean hasPerf) {
+	public void setPerformance(String hasPerf) {
 		performance = hasPerf;
 	}
-	public void setPersuasion(boolean hasPers) {
+	public void setPersuasion(String hasPers) {
 		persuasion = hasPers;
 	}
-	public void setReligion(boolean hasRel) {
+	public void setReligion(String hasRel) {
 		religion = hasRel;
 	}
-	public void setSoh(boolean hasSoh) {
+	public void setSoh(String hasSoh) {
 		soh = hasSoh;
 	}
-	public void setStealth(boolean hasStealth) {
+	public void setStealth(String hasStealth) {
 		stealth = hasStealth;
 	}
-	public void setSurvival(boolean hasSur) {
+	public void setSurvival(String hasSur) {
 		survival = hasSur;
+	}
+	
+	@Override
+	public String toString() {
+		return "CharacterSkills [charId=" + charId + ", acrobatics=" + acrobatics + ", animalHandling=" + animalHandling
+				+ ", arcana=" + arcana + ", athletics=" + athletics + ", deception=" + deception + ", history="
+				+ history + ", insight=" + insight + ", intimidation=" + intimidation + ", investigation="
+				+ investigation + ", medicine=" + medicine + ", nature=" + nature + ", perception=" + perception
+				+ ", performance=" + performance + ", persuasion=" + persuasion + ", religion=" + religion + ", soh="
+				+ soh + ", stealth=" + stealth + ", survival=" + survival + "]";
 	}
 }

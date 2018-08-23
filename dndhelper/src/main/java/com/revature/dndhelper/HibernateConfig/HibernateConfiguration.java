@@ -18,7 +18,11 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.revature.dndhelper.dao.CharacterDao;
+import com.revature.dndhelper.dao.CharacterSkillsDao;
+import com.revature.dndhelper.dao.CharacterStatsDao;
 import com.revature.dndhelper.service.CharacterService;
+import com.revature.dndhelper.service.CharacterSkillsService;
+import com.revature.dndhelper.service.CharacterStatsService;
 
 
 
@@ -79,9 +83,41 @@ public class HibernateConfiguration {
 	}
 	
 	@Bean
+	public CharacterSkillsDao characterSkillsDao(SessionFactory sessionFactory) {
+		CharacterSkillsDao dao = new CharacterSkillsDao();
+		dao.setSessionFactory(sessionFactory);
+		
+		return dao;
+	}
+	
+	@Bean
+	public CharacterStatsDao characterStatsDao(SessionFactory sessionFactory) {
+		CharacterStatsDao dao = new CharacterStatsDao();
+		dao.setSessionFactory(sessionFactory);
+		
+		return dao;
+	}
+	
+	@Bean
 	public CharacterService characterService(CharacterDao characterDao) {
 		CharacterService cs = new CharacterService();
 		cs.setDao(characterDao);
+		
+		return cs;
+	}
+	
+	@Bean
+	public CharacterSkillsService characterSkillsService(CharacterSkillsDao characterSkillsDao) {
+		CharacterSkillsService cs = new CharacterSkillsService();
+		cs.setDao(characterSkillsDao);
+		
+		return cs;
+	}
+	
+	@Bean
+	public CharacterStatsService characterStatsService(CharacterStatsDao characterStatsDao) {
+		CharacterStatsService cs = new CharacterStatsService();
+		cs.setDao(characterStatsDao);
 		
 		return cs;
 	}

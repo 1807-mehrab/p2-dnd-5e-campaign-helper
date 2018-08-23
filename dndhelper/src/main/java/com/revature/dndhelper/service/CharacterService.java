@@ -30,13 +30,14 @@ public class CharacterService {
 	}
 	
 	@Transactional 
-	public void saveCharacter(String userEmail, String charName, String charClass, String charRace, String charBackground) {
+	public void saveCharacter(String userEmail, String charName, String charClass, String charRace, String charBackground, String charAlignment) {
 		DNDCharacter c = new DNDCharacter();
 		c.setUserEmail(userEmail);
 		c.setCharName(charName);
 		c.setCharClass(charClass);
 		c.setCharRace(charRace);
 		c.setCharBackground(charBackground);
+		c.setCharAlignment(charAlignment);
 		
 		dao.saveCharacter(c);
 	}

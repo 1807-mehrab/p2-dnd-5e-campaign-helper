@@ -5,11 +5,12 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.dndhelper.beans.UserAccount;
 
-@Transactional
+@Repository
 public class UserDao{
 	private SessionFactory sessionFactory;
 	public void setSF(SessionFactory sF) {
