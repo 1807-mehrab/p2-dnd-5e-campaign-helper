@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="menu">
+    {{#link-to "homepage"}}
+      <h1>
+        <em> Home</em>
+      </h1>
+    {{/link-to}}
+    <div class="links">
+      {{#link-to "createaccount" class="menu-about"}}
+        Create Account
+      {{/link-to}}
+     {{#link-to "login" class="menu-contact"}}
+        Login
+      {{/link-to}}
+  </div>
+</div>
+  <div class="body">
+    {{outlet}}
+</div>
+</div> 
