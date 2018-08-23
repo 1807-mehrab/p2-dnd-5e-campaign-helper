@@ -41,4 +41,9 @@ public class CharacterService {
 		
 		dao.saveCharacter(c);
 	}
+	
+	@Transactional
+	public void saveCharacter(DNDCharacter DNDchar) {
+		dao.saveCharacter(DNDchar);
+	}
 }

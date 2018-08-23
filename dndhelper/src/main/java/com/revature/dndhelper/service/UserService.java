@@ -36,4 +36,9 @@ public class UserService {
 		
 		dao.saveUser(user);
 	}
+	
+	@Transactional
+	public void saveUser(User user) {
+		dao.saveUser(user);
+	}
 }
