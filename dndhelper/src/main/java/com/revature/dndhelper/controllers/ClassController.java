@@ -19,7 +19,7 @@ import com.revature.dndhelper.beans.DNDCharacter;
 @RequestMapping("/classes")
 public class ClassController{
 	@RequestMapping(value = "/selectClass/{Class}")
-	public void selectClass(@PathVariable("Class") String charClass,HttpServletRequest req) {
+	public void selectClass(@PathVariable("Class") String charClass) {
 		if(charClass != null) {
 			// if we need to store the class input from ember in here
 		}
