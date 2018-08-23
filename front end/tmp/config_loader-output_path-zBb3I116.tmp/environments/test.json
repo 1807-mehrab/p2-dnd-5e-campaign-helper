@@ -1,0 +1,1 @@
+{"modulePrefix":"dnd","environment":"test","rootURL":"/","locationType":"none","EmberENV":{"FEATURES":{},"EXTEND_PROTOTYPES":{"Date":false}},"APP":{"LOG_ACTIVE_GENERATION":false,"LOG_VIEW_LOOKUPS":false,"rootElement":"#ember-testing","autoboot":false,"name":"dnd","version":"0.0.0+3385433f"},"exportApplicationGlobal":true}
