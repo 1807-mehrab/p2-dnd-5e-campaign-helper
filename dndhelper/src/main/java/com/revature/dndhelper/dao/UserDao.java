@@ -1,5 +1,6 @@
 package com.revature.dndhelper.dao;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,14 +41,8 @@ public class UserDao{
 		return true;
 	}
 	
-	public int saveUser(User user) {
+	public void saveUser(User user) throws  SQLIntegrityConstraintViolationException{
 		Session s = sessionFactory.getCurrentSession();
-		try {
-			return (int) s.save(user);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
+			s.save(user);
 	}
 }

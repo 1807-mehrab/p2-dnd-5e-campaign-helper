@@ -1,5 +1,7 @@
 package com.revature.dndhelper.service;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,7 +30,7 @@ public class UserService {
 	}
 	
 	@Transactional
-	public void saveUser(String email, String password) {
+	public void saveUser(String email, String password) throws SQLIntegrityConstraintViolationException {
 		
 		User user = new User();
 		user.setEmail(email);
@@ -38,7 +40,8 @@ public class UserService {
 	}
 	
 	@Transactional
-	public void saveUser(User user) {
-		dao.saveUser(user);
+	public void saveUser(User user) throws SQLIntegrityConstraintViolationException {
+		
+			dao.saveUser(user);
 	}
 }

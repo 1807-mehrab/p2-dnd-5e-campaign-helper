@@ -17,7 +17,6 @@ import com.revature.dndhelper.beans.User;
 import com.revature.dndhelper.service.UserService;
 @Controller
 @RequestMapping("/login")
-
 public class LoginController{
 	
 	@RequestMapping(value = "/selectClass", method = RequestMethod.GET)

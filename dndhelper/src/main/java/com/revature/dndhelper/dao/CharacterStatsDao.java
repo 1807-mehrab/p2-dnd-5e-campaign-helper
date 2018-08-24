@@ -17,14 +17,17 @@ public class CharacterStatsDao{
 	public void setSessionFactory(SessionFactory sF) {
 		sessionFactory = sF;
 	}
-	public List<CharacterStats> getCharacterStatsByUserId(int charId){
+	
+	@Transactional
+	public CharacterStats getCharacterStatsByCharId(int charId){
 		Session session = sessionFactory.getCurrentSession();
 		List<CharacterStats> accounts = new ArrayList<CharacterStats>();
 		accounts= session.createQuery("from CharacterStats where char_id = :nameVar")
 				.setInteger("nameVar", charId).list();
-		return accounts;
+		return accounts.get(0);
 	}
 	
+	@Transactional
 	public int saveCharacterStats(CharacterStats cStats) {
 		Session s = sessionFactory.getCurrentSession();
 		try {
@@ -36,6 +39,7 @@ public class CharacterStatsDao{
 		}
 	}
 	
+	@Transactional
 	public void updateCharacterStats(CharacterStats cStats) {
 		Session s = sessionFactory.getCurrentSession();
 		try {

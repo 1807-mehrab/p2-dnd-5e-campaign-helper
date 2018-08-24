@@ -1,5 +1,6 @@
 package com.revature.dndhelper.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,28 @@ public class CharacterService {
 	}
 	
 	@Transactional
+	public DNDCharacter getCharacterByContents(DNDCharacter c) {
+		String userEmail = c.getUserEmail();
+		String charName = c.getCharName();
+		String charClass = c.getCharClass();
+		String charRace = c.getCharRace();
+		String charBackground = c.getCharBackground();
+		String charAlignment = c.getCharAlignment();
+		ArrayList<DNDCharacter> result = (ArrayList) dao.getCharacterByContents(userEmail, charName, charClass, charRace, charBackground, charAlignment);
+		
+		if(!result.isEmpty()) {
+			return result.get(0);
+		}
+		
+		return null;
+	}
+	@Transactional
 	public void saveCharacter(DNDCharacter DNDchar) {
+		try {
 		dao.saveCharacter(DNDchar);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

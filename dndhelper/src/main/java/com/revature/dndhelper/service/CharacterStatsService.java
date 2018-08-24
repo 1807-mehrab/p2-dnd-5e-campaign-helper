@@ -2,6 +2,7 @@ package com.revature.dndhelper.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.dndhelper.beans.CharacterStats;
 import com.revature.dndhelper.dao.CharacterDao;
@@ -17,15 +18,20 @@ public class CharacterStatsService {
 		this.dao = dao;
 	}
 	
-	public void getCharacterStatsByUserId(int charId) {
-		dao.getCharacterStatsByUserId(charId);
+	@Transactional
+	public CharacterStats getCharacterStatsByCharId(int charId) {
+		return dao.getCharacterStatsByCharId(charId);
 	}
 	
-	public void saveCharacterStats(CharacterStats cStats) {
+	@Transactional
+	public void saveCharacterStats(CharacterStats cStats) throws Exception {
 		dao.saveCharacterStats(cStats);
 	}
 	
-	public void updateCharacterStats(CharacterStats cStats) {
+	@Transactional
+	public void updateCharacterStats(CharacterStats cStats) throws Exception {
 		dao.updateCharacterStats(cStats);
 	}
+	
+	
 }

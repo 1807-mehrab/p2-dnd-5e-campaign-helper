@@ -32,16 +32,29 @@ public class CharacterDao {
 		return result;
 	}
 	
+	public List<DNDCharacter> getCharacterByContents(String email, String name, String cclass, String race, String bg, String align) {
+		Session s = sessionFactory.getCurrentSession();
+		List<DNDCharacter> result = s.createQuery("from DNDCharacter where email= :userEmail and char_name= :name and char_class= :class and char_race= :race and char_background= :bg and char_alignment= :align").
+				setString("userEmail", email)
+				.setString("name", name)
+				.setString("class", cclass)
+				.setString("race", race)
+				.setString("bg", bg)
+				.setString("align", align).
+				list();
+		
+		
+		
+		return result;
+	}
 	
-	
-	public int saveCharacter(DNDCharacter c) {
+	public void saveCharacter(DNDCharacter c) {
 		Session s = sessionFactory.getCurrentSession();
 		try {
-			return (int) s.save(c);
+			 s.save(c);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return 0;
 		}
 	}
 }

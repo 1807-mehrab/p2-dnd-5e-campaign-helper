@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.HttpServletBean;
 import com.revature.dndhelper.beans.CharacterStats;
 
-@RestController("/characterStats")
+
 public class CharacterStatsController{
 	
 	@RequestMapping(value = "/assignStats", method = RequestMethod.POST)

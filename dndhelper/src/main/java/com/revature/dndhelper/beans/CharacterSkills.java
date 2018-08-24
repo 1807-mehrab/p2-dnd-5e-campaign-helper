@@ -11,8 +11,8 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="Characters_Skills")
 public class CharacterSkills{
+	
 	@Id
-	@GeneratedValue
 	@Column(name = "char_id")
 	private int charId;
 	

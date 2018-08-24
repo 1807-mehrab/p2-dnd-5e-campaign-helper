@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 public class CharacterStats{
 	
 	@Id
-	@GeneratedValue
 	@Column(name = "char_id")
 	private int charId;
 	

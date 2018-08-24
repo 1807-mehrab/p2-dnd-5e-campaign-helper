@@ -25,12 +25,12 @@ public class CharacterSkillsService {
 	}
 	
 	@Transactional
-	public void saveCharacterSkills(CharacterSkills cSkill) {
+	public void saveCharacterSkills(CharacterSkills cSkill) throws Exception {
 		dao.saveCharacterSkills(cSkill);
 	}
 	
 	@Transactional
-	public void updateCharacterSkills(CharacterSkills cSkill) {
+	public void updateCharacterSkills(CharacterSkills cSkill) throws Exception {
 		dao.updateCharacterSkills(cSkill);
 	}
 }

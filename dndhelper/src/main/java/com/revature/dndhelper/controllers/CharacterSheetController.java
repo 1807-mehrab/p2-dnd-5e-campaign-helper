@@ -13,7 +13,7 @@ import com.revature.dndhelper.beans.CharacterSkills;
 import com.revature.dndhelper.beans.DNDCharacter;
 import com.revature.dndhelper.service.*;
 
-@RestController("/characterStats")
+
 public class CharacterSheetController{
 	
 	@RequestMapping(value = "/characterSheet", method = RequestMethod.POST)
@@ -97,13 +97,7 @@ public class CharacterSheetController{
 		//Modify HP based on final constitution value
 		charStats.setHP(charStats.getHP() + (charStats.getCon()-10)/2);
 	
-		//Create service objects and send all the objects to the database to insert a new character
-		CharacterService cs = new CharacterService();
-		CharacterStatsService cStats = new CharacterStatsService();
-		CharacterSkillsService cSkills = new CharacterSkillsService();
-		cs.saveCharacter(character);
-		cStats.saveCharacterStats(charStats);
-		cSkills.saveCharacterSkills(charSkills);
+		
 	}
 	public void finishCharacter(DNDCharacter character,CharacterStats charStats,CharacterSkills charSkills) {
 	//setting base HP according to chosen class
@@ -187,8 +181,7 @@ public class CharacterSheetController{
 			CharacterService cs = new CharacterService();
 			CharacterStatsService cStats = new CharacterStatsService();
 			CharacterSkillsService cSkills = new CharacterSkillsService();
-			cs.saveCharacter(character);
-			cStats.saveCharacterStats(charStats);
-			cSkills.saveCharacterSkills(charSkills);
+			
+			
 		}
 }

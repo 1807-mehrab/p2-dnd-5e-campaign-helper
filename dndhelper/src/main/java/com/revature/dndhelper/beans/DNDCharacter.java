@@ -1,5 +1,7 @@
 package com.revature.dndhelper.beans;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +12,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Entity
 @Table(name="Characters_Main")
-public class DNDCharacter {
+public class DNDCharacter implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1538953471842345823L;
 
 	@Id
 	@Column(name="char_id")
