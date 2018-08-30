@@ -1,0 +1,20 @@
+<div class = "container">
+<div class ="row">
+<div class = "col-dd-4">
+<h2>
+User Profile
+</h2>
+
+{{#each model as |login|}}
+<h4>UserName : {{login.u}} </h4>
+{{/each}}
+
+<br /> 
+
+{{#each model as |login|}}
+<h4>Password : {{login.p}} </h4>
+{{/each}}
+
+</div>
+</div>
+</div>
